@@ -11,8 +11,8 @@ class Solution:
 
         # While the left pointer is less than or equal to the right pointer
         while l <= r:
-            # Calculate the middle index
-            mid = (l + r) // 2
+            # Calculate the middle index. Although we can use (l + r) // 2, we use l + (r - l) // 2 to avoid potential overflow issues in other programming languages.
+            mid = l + (r - l) // 2
             # If the target is found at the middle index, return the index
             if arr[mid] == target:
                 return mid
